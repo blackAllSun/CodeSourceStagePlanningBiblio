@@ -24,19 +24,19 @@ foreach($data as $d) {
 $(document).ready(function(){
 
 
-    $('.add').click( function(e){ 
+    $('.add').on("click",function(e){ 
     	var dataId = $(this).data("id");
     	var increment =dataId+1;
     	console.log("dataId:after click "+dataId);
     	console.log("increment:after click "+increment);
-    	$('.add').fadeOut(5);
+    	$('.add').fadeOut(400);
     	console.log("dataId:after fadeOut "+dataId);
     	console.log("increment:after fadeOut "+increment);
     	var temp=$("tr[class=attr"+ dataId +"]").clone();
     	console.log(temp);
     	temp.attr('class', "attr"+ increment);
     	//recuperer data-id du bouton créé
-    	var temp2=$("button[data-id="+ dataId +"]");
+    	var temp2=$(".add[data-id="+ dataId +"]");
     	console.log("test temp2 "+temp2);
     	temp2.attr('data-id',increment);
     	console.log("test temp2 after "+temp2);
