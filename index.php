@@ -3,26 +3,46 @@
 <head>
   <meta charset="utf-8">
   <title>clone demo</title>
-  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <script src="jquery-3.5.1.min.js"></script>
 </head>
 <body>
  <table>
 <?php
-$data=array(1,2,3);
-foreach($data as $d) { ?>
+$data=array(1,2,3,4,5);
+foreach($data as $d) { 
+  //  if($d==5)
+    ?>
 	<tr class="attr<?php echo $d;?>"><td><input type="text"></td><td><button class='add' type="button" data-id="<?php echo $d;?>">+</button></td></tr>
-<?php } ?>
+<?php 
+/*} else {
+        
+    }*/
+} ?>
 </table>
 <script>
 
 $(document).ready(function(){
+
+
     $('.add').click( function(e){ 
-    	var dataId = $('.add').data("id");
-    	$('.add').remove();
+    	var dataId = $(this).data("id");
     	var increment =dataId+1;
-        $("[class=attr"+increment+"]").clone().appendTo($('table'));
-        
-    	alert(e);
+    	console.log("dataId:after click "+dataId);
+    	console.log("increment:after click "+increment);
+    	$('.add').fadeOut(5);
+    	console.log("dataId:after fadeOut "+dataId);
+    	console.log("increment:after fadeOut "+increment);
+    	var temp=$("tr[class=attr"+ dataId +"]").clone();
+    	console.log(temp);
+    	temp.attr('class', "attr"+ increment);
+    	//recuperer data-id du bouton créé
+    	var temp2=$("button[data-id="+ dataId +"]");
+    	console.log("test temp2 "+temp2);
+    	temp2.attr('data-id',increment);
+    	console.log("test temp2 after "+temp2);
+    	temp.appendTo($('table'));
+    	console.log("dataId:after clone "+dataId);
+    	console.log("increment:after clone "+increment);
     });
 });
 
