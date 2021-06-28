@@ -30,20 +30,14 @@ foreach($data as $d) {
 //chercher comment passer id  button par fonction dans methode onclick de la balise button
 $(document).ready(function(){
 
-	$('.add').bind( "click", function( event ){
-    	//var x = $(this).attr('data-id');
-        //alert(x);	    	
+	$('.add').bind( "click", function( event ){  	
         var dataId = $(this).data("id");
-      $(this).css("background-color", "yellow");
-      	
-    	var temp=$("tr[class=attr"+ dataId +"]").clone();
-    	
+    	var temp=$("tr[class=attr"+ dataId +"]").clone();	
     	var increment =parseInt(temp.attr('class').replace(/\D+/g,''))+1;
-
     	var temp2=$(".add[data-id="+dataId +"]");
     	dataId=increment;
-		alert(increment);
-    	alert("test temp2 "+temp.attr('class'));
+    	console.log(increment);
+		console.log("test temp2 "+temp.attr('class'));
 		temp.attr('class','attr'+increment);
     	temp2.attr('data-id',increment);
     	console.log("test temp2 after "+temp2.attr('data-id'));
