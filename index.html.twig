@@ -109,13 +109,10 @@
 <script type="text/javascript">
      $(document).ready(function(){
        $(".ui-button-add").click(function(event){
-
-        var nbreLinesStr=$('.tab').attr('id');
-        var nbreLines=nbreLinesStr.substr(1,4);
         var tr=$('table');
         nbreLines++;
         var lines="<tr id='tr"+nbreLines+"'><td>test</td></tr>";
-        tr.after(lines);
+        tr.append(lines);
        });
        });
      </script>
