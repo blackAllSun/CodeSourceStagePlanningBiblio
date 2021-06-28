@@ -102,7 +102,7 @@
           </td>
         </tr>
       </table>
-      <input hidden="sizeTable"  value="{{nbDays}}">
+
     </form>
     {% if holiday_enable == true %}
       <p>Les jours de fermeture ne seront pas décomptés des congés.</p>
@@ -111,9 +111,7 @@
 <script type="text/javascript">
      $(document).ready(function(){
        $(".ui-button-add").on('click',function(){
-         var tr14=$('#tr14').clone();
-         var idLines=$("input[hidden='sizeTable']").val();
-         alert(idLines);
+         var tr14=$('table tr:last').prev('tr').clone();
         var nextIdLine=parseInt(idLines)+1;
          tr14.attr('id','tr'+nextIdLine);
          var inputDayHoliday=tr14.find("a[href='javascript:supprime_jourFerie(14);']");
