@@ -18,31 +18,22 @@ $data=array(1,2,3,4,5);
 foreach($data as $d) { 
   //  if($d==5)
     ?>
-	<tr class="attr<?php echo $d;?>"><td><input type="text"></td><td><button class='add' type="button" data-id="<?php echo $d;?>">+</button></td></tr>
+	<tr class="attr<?php echo $d;?>"><td><input type="text"></td></tr>
 <?php 
 /*} else {
         
     }*/
 } ?>
 </table>
-
+<button class='add' type='button'>+</button>
 <script>
 //chercher comment passer id  button par fonction dans methode onclick de la balise button
 $(document).ready(function(){
 
 	$('.add').bind( "click", function( event ){  	
-        var dataId = $(this).data("id");
-    	var temp=$("tr[class=attr"+ dataId +"]").clone();	
-    	var increment =parseInt(temp.attr('class').replace(/\D+/g,''))+1;
-    	var temp2=$(".add[data-id="+dataId +"]");
-    	dataId=increment;
-    	console.log(increment);
-		console.log("test temp2 "+temp.attr('class'));
-		temp.attr('class','attr'+increment);
-    	temp2.attr('data-id',increment);
-    	console.log("test temp2 after "+temp2.attr('data-id'));
-    	temp2.remove();
-    	temp.appendTo($('table'));
+
+    	var ligne = "<tr class='attr"+6+"'><td><input type='text'></td></tr>";
+    	$("table").append(ligne);
 		});
 
 });
