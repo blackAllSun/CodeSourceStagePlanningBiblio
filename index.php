@@ -51,8 +51,8 @@ $(document).ready(function(){
 			alert(increment);
 	    	alert("test temp2 "+temp.attr('class'));
 			temp.attr('class','attr'+increment);
-	    	temp.attr('data-id',increment);
-	    	alert("test temp2 after "+temp.attr('class'));
+	    	temp2.attr('data-id',increment);
+	    	console.log("test temp2 after "+temp2.attr('data-id'));
 	    	temp.appendTo($('table'));
 	    } 
 	  });
