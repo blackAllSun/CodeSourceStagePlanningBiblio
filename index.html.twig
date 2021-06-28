@@ -71,7 +71,7 @@
           </tr>
         {% endfor %}
         {% for j in nbDays..nbExtra %}
-          <tr id='tr{{ j }}' class="tab">
+          <tr id='tr{{ j }}'>
             <td>
               <a href='javascript:supprime_jourFerie({{ j }});'>
                 <span class='pl-icon pl-icon-drop' title='Supprimer'></span>
@@ -94,13 +94,15 @@
             </td>
           </tr>
         {% endfor %}
-        <tr>
+        <tr class='last-line'></tr>
+        <tr id="trButton">
           <td colspan='6' style='padding:20px 0 0 20px;'>
             <input type='submit' value='Valider' class='ui-button' />
             <input type='button' value='Ajouter' class='ui-button-add' />
           </td>
         </tr>
       </table>
+      <input hidden="sizeTable"  value="{{nbDays}}">
     </form>
     {% if holiday_enable == true %}
       <p>Les jours de fermeture ne seront pas décomptés des congés.</p>
@@ -108,13 +110,19 @@
   </div>
 <script type="text/javascript">
      $(document).ready(function(){
-       $(".ui-button-add").click(function(event){
-        var tr=$('table');
-        nbreLines++;
-        var lines="<tr id='tr"+nbreLines+"'><td>test</td></tr>";
-        tr.append(lines);
+       $(".ui-button-add").on('click',function(){
+         var tr14=$('#tr14').clone();
+         var idLines=$("input[hidden='sizeTable']").val();
+         alert(idLines);
+        var nextIdLine=parseInt(idLines)+1;
+         tr14.attr('id','tr'+nextIdLine);
+         var inputDayHoliday=tr14.find("a[href='javascript:supprime_jourFerie(14);']");
+        inputDayHoliday.attr('href','javascript:supprime_jourFerie('+nextIdLine+');');
+        tr14.insertBefore('.last-line');
+
        });
        });
      </script>
 {% endblock %}
+
 
