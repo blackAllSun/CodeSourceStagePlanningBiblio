@@ -10,7 +10,7 @@ Fatal error: Uncaught Error: Cannot access protected property App\Model\Absence:
 
 
 require_once __DIR__.'/../vendor/autoload.php';
-require_once __DIR__.'/init.php';
+require_once(__DIR__.'/init.php');
 use App\Model\Absence;
 
 $em=$entityManager->getRepository(Absence::class);
