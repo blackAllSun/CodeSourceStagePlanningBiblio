@@ -1,6 +1,7 @@
 <?php
-ini_set('display_errors','on');
-error_reporting(E_ALL);
+ini_set('display_startup_errors', 1);
+ini_set('display_errors', 1);
+error_reporting(-1);
 /**
 
 Fatal error: Uncaught Error: Cannot access protected property App\Model\Absence::$perso_id in /home/planning/www/planningbiblio/public/test.php:12 Stack trace: #0 {main} thrown in /home/planning/www/planningbiblio/public/test.php on line 12
