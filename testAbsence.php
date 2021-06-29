@@ -15,8 +15,7 @@ use App\Model\Absence;
 
 $em=$entityManager->getRepository(Absence::class);
 
-$absence=new Absence();
-$absence->perso_id(1);
+$absence=$em->find(1);
 echo $absence->perso_id;
 var_dump($absence);
 
