@@ -42,13 +42,13 @@ class Absence extends PLBEntity {
     /** @Column(type="integer") **/
     protected $valide;
 
-    /** @Column(type="timestamp") **/
+    /** @Column(type="datetime") **/
     protected $validation;
 
     /** @Column(type="integer") **/
     protected $valide_n1;
 
-    /** @Column(type="timestamp") **/
+    /** @Column(type="datetime") **/
     protected $validation_n1;
 
     /** @Column(type="integer") **/
