@@ -132,3 +132,20 @@ echo '</container>';
 ?>
 </body>
 </html>
+MariaDB [planningbiblio]> SELECT saisie_par FROM conges;
++------------+
+| saisie_par |
++------------+
+|          0 |
+|          0 |
+|          1 |
+|          1 |
+|          1 |
+|          1 |
+|          1 |
+|          1 |
+|          1 |
+|          1 |
+|          1 |
++------------+
+11 rows in set (0.000 sec)
