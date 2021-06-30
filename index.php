@@ -42,4 +42,4 @@ $(document).ready(function(){
  
 </body>
 </html>
-Aucun planning de présence enregistré pour cette période - calcul impossible.
+https://stackoverflow.com/questions/7961900/jquery-clone-table-row
