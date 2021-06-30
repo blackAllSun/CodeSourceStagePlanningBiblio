@@ -93,8 +93,11 @@ echo '<tr>
 foreach($congess as $conges) {
     echo '<tr>';
     echo '<td>'.$conges->id().'</td>';
-    $perso=$agentRepository->find($conges->perso_id());
-    echo '<td>'.$perso->nom().' '.$perso->prenom().'</td>';
+    if($conges->perso_id()==0){echo '<td></td>';}
+    else {
+        $perso=$agentRepository->find($conges->perso_id());
+        echo '<td>'.$perso->nom().' '.$perso->prenom().'</td>';
+    }
     echo '<td>'.date_format($conges->debut(), "d-m-Y").'</td>';
     echo '<td>'.date_format($conges->fin(), "d-m-Y").'</td>';
     echo '<td>'.$conges->halfday().'</td>';
@@ -105,9 +108,11 @@ foreach($congess as $conges) {
     echo '<td>'.$conges->heures().' </td>';
     echo '<td>'.$conges->debit().'</td>';
     echo '<td>'.date_format($conges->saisie(), "d-m-Y").'</td>';
+    if($conges->saisie_par()==0){echo '<td></td>';}
+    else {
     $saisie_par=$agentRepository->find($conges->saisie_par());
-    var_dump($conges->saisie_par());
     echo '<td>'.$saisie_par->nom().' '.$saisie_par->prenom().'</td>';
+    }
     echo '<td>'.$conges->modif().'</td>';
     echo '<td>'.date_format($conges->modification(), "d-m-Y").'</td>';
     echo '<td>'.$conges->valide_n1().'</td>';
@@ -123,7 +128,10 @@ foreach($congess as $conges) {
     echo '<td>'.$conges->supprime().'</td>';
     echo '<td>'.date_format($conges->suppr_date(), "d-m-Y").'</td>';
     echo '<td>'.$conges->information().'</td>';
-    echo '<td>'.date_format($conges->info_date(), "d-m-Y").'</td>';
+    if($conges->info_date()==null){echo '<td></td>';}
+    else {
+        echo '<td>'.date_format($conges->info_date(), "d-m-Y").'</td>';
+    }
     echo '</tr>';
 }
 
