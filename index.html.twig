@@ -111,7 +111,9 @@
 <script type="text/javascript">
      $(document).ready(function(){
        $(".ui-button-add").on('click',function(){
-         var tr14=$('table tr:last').prev('tr').clone();
+        var trStart=$('table tr:last').prev('tr').clone();
+        var idLines=trStart.attr('id');
+        alert(idLines);
         var nextIdLine=parseInt(idLines)+1;
          tr14.attr('id','tr'+nextIdLine);
          var inputDayHoliday=tr14.find("a[href='javascript:supprime_jourFerie(14);']");
@@ -122,3 +124,6 @@
        });
      </script>
 {% endblock %}
+
+
+
