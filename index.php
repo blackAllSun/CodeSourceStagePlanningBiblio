@@ -42,4 +42,4 @@ $(document).ready(function(){
  
 </body>
 </html>
-https://meet.google.com/ray-nzoa-spz?authuser=0
+Aucun planning de présence enregistré pour cette période - calcul impossible.
