@@ -130,29 +130,35 @@
         inputDay.attr("data-id","jour"+nextIdLine);
         inputDay.attr("id",nextIdLine);
         inputDay.attr("name","jour['"+nextIdLine+"']");
+        inputDay.val('');
 
         var inputHoliday=trClone.find("input[data-id='ferie"+itemId+"']");
         inputHoliday.attr("data-id","ferie"+nextIdLine);
         inputHoliday.attr("name","ferie['"+nextIdLine+"']");
+        inputHoliday.val('');
 
         var inputClosing=trClone.find("input[data-id='fermeture"+itemId+"']");
         inputClosing.attr("data-id","fermeture"+nextIdLine);
         inputClosing.attr("name","fermeture['"+nextIdLine+"']");
-        
+        inputClosing.val('');
+
         var inputName=trClone.find("input[data-id='nom"+itemId+"']");
         inputName.attr("data-id","nom"+nextIdLine);
         inputName.attr("name","nom['"+nextIdLine+"']");
+        inputName.val('');
 
         var inputComment=trClone.find("input[data-id='commentaire"+itemId+"']");
         inputComment.attr("data-id","commentaire"+nextIdLine);
         inputComment.attr("name","commentaire['"+nextIdLine+"']");
-
+        inputComment.val('');
+        
         trClone.insertBefore('#last-line');
 
        });
        });
      </script>
 {% endblock %}
+
 
 
 
